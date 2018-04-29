@@ -1789,9 +1789,9 @@ function getCountryInfo () {
     'ARG': {
       countryName: 'Argentina',
       fillKey: 'southamerica',
-      dianaVisited: false,
+      dianaVisited: true,
       brentVisited: true,
-      separateVisit: false,
+      separateVisit: true,
       flagName: 'ar',
     },
 
