@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Scott Hofman</title>
-    <meta name="keywords" content="Developer, Software Engineer, Personal">
-    <meta name="description" content="Personal homepage for Scott Hofman">
+    <title>Hofman Travels</title>
+    <meta name="keywords" content="Personal, Travel">
+    <meta name="description" content="Travels for Brent and Diana Hofman">
     <meta charset="utf-8">
     <meta name="author" content="Scott Hofman">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/index.css" rel="stylesheet">
     <link href="./css/travel.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg" href="./favicon-128x128.png" sizes="128x128">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/flag.css" />
+    <script src="./js/visited.js" defer></script>
     <script src="./js/cover-photo-scroll.js"></script>
     <script src="https://d3js.org/d3.v4.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js" defer></script>
@@ -26,77 +26,21 @@
     </script>
   </head>
   <body>
-    <header>
-      <ul>
-        <li>
-          <a href="http://www.scotthofman.com"><img src="./favicon-128x128.png" alt="icon"/></a>
-        </li>
-        <li><a href="http://www.scotthofman.com/resume">C.V.</a></li>
-        <li><a href="https://github.com/shofman">Coding</a></li>
-        <li><a href="http://www.scotthofman.com#contact">Contact</a></li>
-      </ul>
-    </header>
-    
-    <section class="about-me">
-      <div class="about-text">
-        <h1>Welcome!</h1>
-        <h3>My name is <strong>Scott Hofman</strong></h3>
-      </div>
-      <div class="about-photo">
-        <img src="./images/me.png" alt="A picture of me"/>
-      </div>
-    </section>
-
     <section>
-      <h3>I currently write code in:</h3>
-      <div class="code-spinner">
-        <div id="languages" class="scrollable-container">
-          <div class="stage">
-            <div class="shape">
-              <div data-item="Javascript" class="code item" style="transform: rotateX(0deg) translateZ(110px);">Javascript</div>
-              <div data-item="PHP" class="code item" style="transform: rotateX(51.4286deg) translateZ(110px);">PHP</div>
-              <div data-item="C#" class="code item" style="transform: rotateX(102.857deg) translateZ(110px);">C#</div>
-              <div data-item="Python" class="code item" style="transform: rotateX(154.286deg) translateZ(110px);">Python</div>
-              <div data-item="Java" class="code item" style="transform: rotateX(205.714deg) translateZ(110px);">Java</div>
-              <div data-item="SQL" class="code item" style="transform: rotateX(257.143deg) translateZ(110px);">SQL</div>
-              <div data-item="Ruby" class="code item" style="transform: rotateX(308.571deg) translateZ(110px);">Ruby</div>
-            </div>
-          </div>
-        </div>
-        <code>
-          <div class="display-code">
-            <div class="top-level">
-              var displayHelloWorld = function () {
-                <div>console.log("Hello World");</div>
-              };
-              <div class="empty-space"></div>
-              displayHelloWorld();
-            </div>
-          </div>
-        </code>
-      </div>
-      <p class="code-cta">See more of my coding <a href="https://github.com/shofman">here</a></p>
-    </section>
-
-    <section class="cover-photo">
-      <div class="cover-photo-background" id="antarctica-background"></div>
-      <div class="cover-photo-image" id="antarctica"></div>
-      <div class="attribution">
-        <small>Antarctica 2016 - © Scott Hofman</small>
-      </div>
-    </section>
-
-    <section>
-      <h3>I like to travel</h3>
-      <p>Check out this interactive map showing the places I've been: </p>
+      <h3>Travel</h3>
+      <p>Map showing the places we've been: </p>
       <section class="controls">
         <p class="map-control">
           <input type="checkbox" id="orthographic" checked/>
           <label for="orthographic">Globe view</label>
         </p>
         <p class="map-control">
-          <input type="checkbox" id="visited" checked/>
-          <label for="visited">Scott's Countries</label>
+          <input type="checkbox" id="brent-visited" checked/>
+          <label for="brent-visited">Brent's Countries</label>
+        </p>
+        <p class="map-control">
+          <input type="checkbox" id="diana-visited" checked/>
+          <label for="diana-visited">Diana's Countries</label>
         </p>
         <p class="map-control all-continents">
           <input type="checkbox" id="show-all" />
@@ -110,6 +54,7 @@
           <div class="stage">
             <div class="shape">
               <div data-item="North America" class="continents item">North America</div>
+              <div data-item="Caribbean" class="continents item">Caribbean</div>
               <div data-item="Antarctica" class="continents item">Antarctica</div>
               <div data-item="South America" class="continents item">South America</div>
               <div data-item="Asia" class="continents item">Asia</div>
@@ -120,70 +65,19 @@
           </div>
         </div>
         <div class="location-display-wrapper">
-          <div class="header">Countries Visited<span class="footer">Underlined countries are where I have lived</span></div>
+          <div class="header">Countries Visited</div>
           <div class="display-locations">
             <ul class="f32 country-list">
-              <li class="flag bs">Bahamas</li>
-              <li class="flag ca lived">Canada</li>
-              <li class="flag cu">Cuba</li>
-              <li class="flag ht">Haiti</li>
-              <li class="flag jm">Jamaica</li>
-              <li class="flag mx">Mexico</li>
-              <li class="flag us lived">United States</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cover-photo">
-      <div class="cover-photo-background" id="calgary-background"></div>
-      <div class="cover-photo-image" id="calgary"></div>
-      <div class="attribution">
-        <small>Downtown Calgary 2017 - © Scott Hofman</small>
-      </div>
-    </section>
-
-    <section class="people-say">
-      
-    </section>
-
-    <section class="contact-me" id="contact-section">
-      <h3>Contact Me</h3>
-      <p>Here's how you can reach me:</p>
-      <div class="contact-spinner">
-        <div id="contact" class="scrollable-container">
-          <div class="stage">
-            <div class="shape">
-              <div data-item="LinkedIn" class="contact item" style="transform: rotateX(0deg) translateZ(75px);">LinkedIn<sub class="trademark">™</sub></div>
-              <div data-item="Email" class="contact item" style="transform: rotateX(72deg) translateZ(75px);">Email</div>
-              <div data-item="Phone" class="contact item" style="transform: rotateX(144deg) translateZ(75px);">Phone</div>
-              <div data-item="Skype" class="contact item" style="transform: rotateX(216deg) translateZ(75px);">Skype<sub class="trademark">™</sub></div>
-              <div data-item="GitHub" class="contact item" style="transform: rotateX(288deg) translateZ(75px);">GitHub</div>
-            </div>
-          </div>
-        </div>
-        <div class="display-contact-wrapper">
-          <div class="display-contact-details">
-            <a class="linkedin" href="https://www.linkedin.com/in/scott-hofman-92a36882/"><img src="./images/In-2C-108px-TM.png"/><p>View My LinkedIn<sub>™</sub> Page</p></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-note">
-      <p>This <strong>fully responsive</strong> site was developed by me. If you like this, and want to see more</p>
-      <p>Please contact me or see my resume <a href="./resume.html">here</a></p>
-    </section>
     <footer>
       <section>
-        <p>© 2017 Scott Hofman</p>
+        <p>© 2018 Made by <a href="http://www.scotthofman.com">Scott Hofman</a></p>
       </section>
-      <ul>
-        <li>
-          <a href="http://www.scotthofman.com"><img src="./favicon-128x128.png" alt="icon"/></a>
-        </li>
-      </ul>
     </footer>
   </body>
 </html>
