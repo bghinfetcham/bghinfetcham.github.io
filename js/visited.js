@@ -1364,8 +1364,8 @@ function getCountryInfo () {
     'GTM': {
       countryName: 'Guatemala',
       fillKey: 'northamerica',
-      dianaVisited: false,
-      brentVisited: false,
+      dianaVisited: true,
+      brentVisited: true,
       separateVisit: false,
       flagName: 'gt',
     },
@@ -1404,8 +1404,8 @@ function getCountryInfo () {
     'CRI': {
       countryName: 'Costa Rica',
       fillKey: 'northamerica',
-      dianaVisited: false,
-      brentVisited: false,
+      dianaVisited: true,
+      brentVisited: true,
       separateVisit: false,
       flagName: 'cr',
     },
